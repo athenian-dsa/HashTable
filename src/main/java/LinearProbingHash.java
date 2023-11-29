@@ -1,9 +1,11 @@
+package main.java;
+
 import java.util.Arrays;
 
 public class LinearProbingHash {
     int capacity;
     int currentSize; // optional variable
-    int[] arr;
+    public int[] arr;
 
     // Create hash table with a capacity of 10
     public LinearProbingHash() {

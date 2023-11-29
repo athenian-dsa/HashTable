@@ -1,3 +1,5 @@
+package main.java;
+
 /**
  * Name:
  * List Anyone You Collaborated With (if any):
@@ -6,7 +8,7 @@
 public class SeparateChainingHash {
     private int capacity;
     private int currentSize;
-    IntLinkedList[] arr;
+    public IntLinkedList[] arr;
 
     // The constructor should initialize all of the instance variables
     // The default capacity should be 10
