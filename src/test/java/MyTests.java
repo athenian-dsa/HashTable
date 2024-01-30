@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import main.java.LinearProbingHash;
 import main.java.SeparateChainingHash;
+import main.java.IntLinkedList;
+import main.java.IntNode;
 
 public class MyTests {
     LinearProbingHash LPHtable = new LinearProbingHash();
