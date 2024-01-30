@@ -1,5 +1,3 @@
-package main.java;
-
 /**
  * Name:
  * List Anyone You Collaborated With (if any):
