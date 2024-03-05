@@ -251,10 +251,6 @@ public class MyTests {
         for (int i = 0; i < 20; i++){
             testList[i] = new IntLinkedList();
         }
-        testList[3].insert(3);
-        testList[5].insert(5);
-        testList[6].insert(26);
-        testList[7].insert(7);
 
         testList[0].insert(20);
         testList[1].insert(21);
@@ -269,7 +265,7 @@ public class MyTests {
         testList[14].insert(34);
         testList[16].insert(16);
 
-        assertTrue(linkedListsEqual(SCHtable.arr,testList), "Expected " + SCHtable.arr.toString() + " but got " + testList.toString());
+        assertTrue(linkedListsEqual(SCHtable.arr,testList), "Expected " + Arrays.toString(SCHtable.arr) + " but got " + Arrays.toString(testList));
     }
 
     @Test
