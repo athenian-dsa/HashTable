@@ -17,7 +17,7 @@ jobs:
       with:
         test-name: Test
         setup-command: ''
-        command: gradle test
+        command: ./gradlew test
         timeout: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
