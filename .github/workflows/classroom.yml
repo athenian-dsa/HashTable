@@ -1,27 +1,55 @@
 name: Autograding Tests
-'on': {}
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
 permissions:
-  checks: write
-  actions: read
   contents: read
+  issues: read
+  checks: write
+  pull-requests: write
 jobs:
-  run-autograding-tests:
+  run-tests:
+    name: Run Tests
     runs-on: ubuntu-latest
-    if: github.actor != 'github-classroom[bot]'
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - name: Test
-      id: test
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Test
-        setup-command: ''
-        command: ./gradlew test
-        timeout: 10
-    - name: Autograding Reporter
-      uses: classroom-resources/autograding-grading-reporter@v1
-      env:
-        TEST_RESULTS: "${{steps.test.outputs.result}}"
-      with:
-        runners: test
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Cache Gradle packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Tests
+        id: tests
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Tests
+          setup-command: ''
+          command: ./gradlew test
+          timeout: 10
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          TESTS_RESULTS: "${{steps.tests.outputs.result}}"
+        with:
+          runners: tests
