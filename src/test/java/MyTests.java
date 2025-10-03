@@ -10,6 +10,7 @@ public class MyTests {
     public void testLPHInsertion() {
         LPHtable.insert(5);
         LPHtable.insert(7);
+        LPHtable.insert(7);
         LPHtable.insert(3);
         LPHtable.insert(11);
         LPHtable.insert(26);
@@ -22,6 +23,7 @@ public class MyTests {
     @Test
     public void testLPHInsertionWithCollisions() {
         LPHtable.insert(5);
+        LPHtable.insert(7);
         LPHtable.insert(7);
         LPHtable.insert(3);
         LPHtable.insert(11);
@@ -39,6 +41,7 @@ public class MyTests {
     @Test
     public void testLPHInsertionWithWraparound() {
         LPHtable.insert(5);
+        LPHtable.insert(7);
         LPHtable.insert(7);
         LPHtable.insert(3);
         LPHtable.insert(11);
@@ -58,6 +61,7 @@ public class MyTests {
     @Test
     public void testLPHSearch() {
         LPHtable.insert(5);
+        LPHtable.insert(7);
         LPHtable.insert(7);
         LPHtable.insert(3);
         LPHtable.insert(11);
@@ -84,12 +88,14 @@ public class MyTests {
     public void testLPHDeletion() {
         LPHtable.insert(5);
         LPHtable.insert(7);
+        LPHtable.insert(7);
         LPHtable.insert(3);
         LPHtable.insert(11);
         LPHtable.insert(26);
         LPHtable.insert(34);
 
         LPHtable.insert(21);
+        LPHtable.insert(36);
         LPHtable.insert(36);
         LPHtable.insert(49);
 
@@ -107,6 +113,7 @@ public class MyTests {
     @Test
     public void testLPHInsertionAndSearchAfterDeletion() {
         LPHtable.insert(5);
+        LPHtable.insert(7);
         LPHtable.insert(7);
         LPHtable.insert(3);
         LPHtable.insert(11);
@@ -136,6 +143,7 @@ public class MyTests {
     public void testLPHInsertionRehashes() {
         LPHtable.insert(5);
         LPHtable.insert(7);
+        LPHtable.insert(7);
         LPHtable.insert(3);
         LPHtable.insert(26);
         LPHtable.insert(34);
@@ -161,6 +169,7 @@ public class MyTests {
     public void testSCHInsert() {
         SCHtable.insert(5);
         SCHtable.insert(7);
+        SCHtable.insert(7);
         SCHtable.insert(3);
         SCHtable.insert(11);
         SCHtable.insert(26);
@@ -183,6 +192,7 @@ public class MyTests {
     public void testSCHSearch() {
         SCHtable.insert(5);
         SCHtable.insert(7);
+        SCHtable.insert(7);
         SCHtable.insert(3);
         SCHtable.insert(11);
         SCHtable.insert(26);
@@ -203,8 +213,10 @@ public class MyTests {
         SCHtable.insert(5);
         SCHtable.insert(7);
         SCHtable.insert(3);
+        SCHtable.insert(7);
         SCHtable.insert(11);
         SCHtable.insert(26);
+        SCHtable.insert(34);
         SCHtable.insert(34);
 
         SCHtable.delete(11);
@@ -232,6 +244,7 @@ public class MyTests {
         SCHtable.insert(5);
         SCHtable.insert(7);
         SCHtable.insert(3);
+        SCHtable.insert(7);
         SCHtable.insert(11);
         SCHtable.insert(26);
         SCHtable.insert(34);
@@ -272,6 +285,7 @@ public class MyTests {
     @Test
     public void testSCHDuplicates() {
         SCHtable.insert(5);
+        SCHtable.insert(7);
         SCHtable.insert(7);
         SCHtable.insert(3);
         SCHtable.insert(11);
